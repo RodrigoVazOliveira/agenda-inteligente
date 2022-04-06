@@ -1,4 +1,4 @@
-package br.com.agenciainteligente.agenciainteligente.database.entities;
+package br.com.agenciainteligente.agenciainteligente.database.entities.contacts;
 
 import br.com.agenciainteligente.agenciainteligente.database.helpers.DeserializeToString;
 
