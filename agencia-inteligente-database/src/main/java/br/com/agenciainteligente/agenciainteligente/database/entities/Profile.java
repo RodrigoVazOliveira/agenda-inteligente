@@ -3,14 +3,21 @@ package br.com.agenciainteligente.agenciainteligente.database.entities;
 import br.com.agenciainteligente.agenciainteligente.database.entities.contacts.Contact;
 import br.com.agenciainteligente.agenciainteligente.database.helpers.DeserializeToString;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "profiles")
 public class Profile {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
     private LocalDate birthdate;
+
+    @Embedded
     private Contact contact;
 
     public Long getId() {

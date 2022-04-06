@@ -2,6 +2,9 @@ package br.com.agenciainteligente.agenciainteligente.database.entities.contacts;
 
 import br.com.agenciainteligente.agenciainteligente.database.helpers.DeserializeToString;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Telephone {
 
     private Integer ddd;

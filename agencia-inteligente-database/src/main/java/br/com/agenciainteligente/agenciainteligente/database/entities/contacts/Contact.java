@@ -2,10 +2,18 @@ package br.com.agenciainteligente.agenciainteligente.database.entities.contacts;
 
 import br.com.agenciainteligente.agenciainteligente.database.helpers.DeserializeToString;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import java.util.List;
 
+@Embeddable
 public class Contact {
+
+    @Embedded
     private Email email;
+
+    @ElementCollection
     private List<Telephone> telephones;
 
     public Email getEmail() {

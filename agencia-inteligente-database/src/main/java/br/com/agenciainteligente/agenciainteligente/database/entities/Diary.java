@@ -2,16 +2,28 @@ package br.com.agenciainteligente.agenciainteligente.database.entities;
 
 import br.com.agenciainteligente.agenciainteligente.database.helpers.DeserializeToString;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "diaries")
 public class Diary {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private Profile profile;
     private LocalDateTime dateTime;
     private String subject;
     private String description;
     private String comments;
+
+    @Embedded
     private Place place;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
     public Long getId() {
