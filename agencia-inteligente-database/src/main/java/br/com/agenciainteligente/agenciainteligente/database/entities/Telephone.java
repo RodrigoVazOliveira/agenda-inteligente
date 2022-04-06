@@ -2,15 +2,14 @@ package br.com.agenciainteligente.agenciainteligente.database.entities;
 
 import br.com.agenciainteligente.agenciainteligente.database.helpers.DeserializeToString;
 
-public class Email {
-    private final String address;
+public class Telephone {
 
-    public Email(String address) {
-        this.address = address;
-    }
+    private final Integer ddd;
+    private final Integer number;
 
-    public String getAddress() {
-        return address;
+    public Telephone(Integer ddd, Integer number) {
+        this.ddd = ddd;
+        this.number = number;
     }
 
     @Override
