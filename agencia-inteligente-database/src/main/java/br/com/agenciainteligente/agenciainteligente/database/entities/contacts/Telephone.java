@@ -4,11 +4,22 @@ import br.com.agenciainteligente.agenciainteligente.database.helpers.Deserialize
 
 public class Telephone {
 
-    private final Integer ddd;
-    private final Integer number;
+    private Integer ddd;
+    private Integer number;
 
-    public Telephone(Integer ddd, Integer number) {
+    public Integer getDdd() {
+        return ddd;
+    }
+
+    public void setDdd(Integer ddd) {
         this.ddd = ddd;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
         this.number = number;
     }
 

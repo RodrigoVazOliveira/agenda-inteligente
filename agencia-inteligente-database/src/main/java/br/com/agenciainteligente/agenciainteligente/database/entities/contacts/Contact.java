@@ -5,11 +5,22 @@ import br.com.agenciainteligente.agenciainteligente.database.helpers.Deserialize
 import java.util.List;
 
 public class Contact {
-    private final Email email;
-    private final List<Telephone> telephones;
+    private Email email;
+    private List<Telephone> telephones;
 
-    public Contact(Email email, List<Telephone> telephones) {
+    public Email getEmail() {
+        return email;
+    }
+
+    public void setEmail(Email email) {
         this.email = email;
+    }
+
+    public List<Telephone> getTelephones() {
+        return telephones;
+    }
+
+    public void setTelephones(List<Telephone> telephones) {
         this.telephones = telephones;
     }
 
