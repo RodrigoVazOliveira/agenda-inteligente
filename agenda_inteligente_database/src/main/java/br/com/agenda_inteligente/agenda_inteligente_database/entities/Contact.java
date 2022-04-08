@@ -2,11 +2,16 @@ package br.com.agenda_inteligente.agenda_inteligente_database.entities;
 
 import java.util.List;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
+
 import br.com.agenda_inteligente.agenda_inteligente_database.helpers.EntityToString;
 
+@Embeddable
 public class Contact {
 
 	private Email email;
+	@ElementCollection
 	private List<Telephone> telephones;
 
 	public Email getEmail() {

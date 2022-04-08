@@ -2,12 +2,19 @@ package br.com.agenda_inteligente.agenda_inteligente_database;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class AgendaInteligenteDatabaseApplication {
+public class AgendaInteligenteDatabaseApplication extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AgendaInteligenteDatabaseApplication.class, args);
-	}
+    public static void main(String[] args) {
+	SpringApplication.run(AgendaInteligenteDatabaseApplication.class, args);
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+	return builder.sources(AgendaInteligenteDatabaseApplication.class);
+    }
 
 }

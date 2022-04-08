@@ -4,19 +4,18 @@ import br.com.agenda_inteligente.agenda_inteligente_database.helpers.EntityToStr
 
 public class Email {
 
-	private String email;
+	private String address;
 
-	public String getEmail() {
-		return email;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	@Override
 	public String toString() {
 		return EntityToString.generate(this);
 	}
-
 }
