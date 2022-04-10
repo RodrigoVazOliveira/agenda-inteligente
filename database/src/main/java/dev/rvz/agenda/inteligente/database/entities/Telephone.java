@@ -7,6 +7,14 @@ public class Telephone {
 	private Integer ddd;
 	private Integer number;
 
+	public Telephone() {
+	}
+
+	public Telephone(Integer ddd, Integer number) {
+		this.ddd = ddd;
+		this.number = number;
+	}
+
 	public Integer getDdd() {
 		return ddd;
 	}
