@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+	<class
+		name="dev.rvz.agenda.inteligente.database.entities.Category"
+		table="categories">
+		<id name="id">
+			<generator class="identity" />
+		</id>
+		<property column="name" length="50" name="name"
+			not-null="true" type="string" />
+	</class>
+</hibernate-mapping>
