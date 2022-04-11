@@ -2,14 +2,32 @@ package dev.rvz.agenda.inteligente.database.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import dev.rvz.agenda.inteligente.database.helpers.ConvertEntityToString;
 
+@Entity
+@Table(name = "profiles")
 public class Profile {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@Column(length = 70, nullable = false, name = "first_name")
 	private String firstName;
+
+	@Column(length = 70, nullable = false, name = "last_name")
 	private String lastName;
 	private LocalDate bithdate;
+
+	@Embedded
 	private Contact contact;
 
 	public Profile() {

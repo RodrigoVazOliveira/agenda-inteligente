@@ -1,7 +1,10 @@
 package dev.rvz.agenda.inteligente.database.entities;
 
+import javax.persistence.Embeddable;
+
 import dev.rvz.agenda.inteligente.database.helpers.ConvertEntityToString;
 
+@Embeddable
 public class Telephone {
 
 	private Integer ddd;
