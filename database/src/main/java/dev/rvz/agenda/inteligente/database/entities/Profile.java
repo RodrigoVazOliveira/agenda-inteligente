@@ -33,8 +33,7 @@ public class Profile {
 	public Profile() {
 	}
 
-	public Profile(Long id, String firstName, String lastName, LocalDate bithdate, Contact contact) {
-		this.id = id;
+	public Profile(String firstName, String lastName, LocalDate bithdate, Contact contact) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.bithdate = bithdate;
