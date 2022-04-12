@@ -1,4 +1,4 @@
-package dev.rvz.agenda.inteligente.database.services;
+package dev.rvz.agenda.inteligente.database.services.categories;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

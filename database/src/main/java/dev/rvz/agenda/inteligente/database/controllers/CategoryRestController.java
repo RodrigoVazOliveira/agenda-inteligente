@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import dev.rvz.agenda.inteligente.database.controllers.contract.CategoryRestControllerable;
 import dev.rvz.agenda.inteligente.database.dtos.CreateCategoryDTO;
 import dev.rvz.agenda.inteligente.database.entities.Category;
-import dev.rvz.agenda.inteligente.database.services.CategoryService;
+import dev.rvz.agenda.inteligente.database.services.categories.CategoryService;
 
 @RestController
 @RequestMapping(path = "/categories")
