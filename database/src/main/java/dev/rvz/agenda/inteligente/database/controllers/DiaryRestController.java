@@ -13,6 +13,7 @@ import dev.rvz.agenda.inteligente.database.controllers.contract.DiaryRestControl
 import dev.rvz.agenda.inteligente.database.dtos.CreateDiaryDTO;
 import dev.rvz.agenda.inteligente.database.entities.Diary;
 import dev.rvz.agenda.inteligente.database.services.contracts.CreateDiaryServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.GetDiaryByIdServiceable;
 
 @RestController
 @RequestMapping(path = "/diaries")
