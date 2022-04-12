@@ -1,5 +1,6 @@
 package dev.rvz.agenda.inteligente.database.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.ElementCollection;
@@ -15,7 +16,7 @@ public class Contact {
 	private Email email;
 
 	@ElementCollection
-	private List<Telephone> telephones;
+	private List<Telephone> telephones = new ArrayList<Telephone>();
 
 	public Contact() {
 	}
