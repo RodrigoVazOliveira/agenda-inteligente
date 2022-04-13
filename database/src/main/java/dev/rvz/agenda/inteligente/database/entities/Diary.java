@@ -12,6 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+
 import dev.rvz.agenda.inteligente.database.helpers.ConvertEntityToString;
 
 @Entity
@@ -22,8 +27,11 @@ public class Diary {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Profile profile;
+
+	@JsonSerialize(using = LocalDateTimeSerializer.class)
+	@JsonDeserialize(using = LocalDateTimeDeserializer.class)
 	private LocalDateTime dateTime;
 	private String subject;
 	private String description;
@@ -32,23 +40,8 @@ public class Diary {
 	@Enumerated(EnumType.STRING)
 	private TypePlaceEnum place;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Category category;
-
-	public Diary() {
-	}
-
-	public Diary(Long id, Profile profile, LocalDateTime dateTime, String subject, String description, String comments,
-			TypePlaceEnum place, Category category) {
-		this.id = id;
-		this.profile = profile;
-		this.dateTime = dateTime;
-		this.subject = subject;
-		this.description = description;
-		this.comments = comments;
-		this.place = place;
-		this.category = category;
-	}
 
 	public Long getId() {
 		return id;

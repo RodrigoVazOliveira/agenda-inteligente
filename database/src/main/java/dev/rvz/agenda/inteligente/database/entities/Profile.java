@@ -30,16 +30,6 @@ public class Profile {
 	@Embedded
 	private Contact contact;
 
-	public Profile() {
-	}
-
-	public Profile(String firstName, String lastName, LocalDate bithdate, Contact contact) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.bithdate = bithdate;
-		this.contact = contact;
-	}
-
 	public Long getId() {
 		return id;
 	}

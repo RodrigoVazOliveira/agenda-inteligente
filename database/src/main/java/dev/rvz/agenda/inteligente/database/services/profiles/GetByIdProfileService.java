@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import dev.rvz.agenda.inteligente.database.entities.Profile;
-import dev.rvz.agenda.inteligente.database.services.contracts.FindProfileByIdServiceable;
-import dev.rvz.agenda.inteligente.database.services.contracts.GetByIdProfileServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.profiles.FindProfileByIdServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.profiles.GetByIdProfileServiceable;
 
 @Service
 public class GetByIdProfileService implements GetByIdProfileServiceable {

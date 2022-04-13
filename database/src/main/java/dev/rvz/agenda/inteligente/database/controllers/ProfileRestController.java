@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import dev.rvz.agenda.inteligente.database.controllers.contract.ProfileRestControllerable;
 import dev.rvz.agenda.inteligente.database.dtos.CreateProfileDTO;
 import dev.rvz.agenda.inteligente.database.entities.Profile;
-import dev.rvz.agenda.inteligente.database.services.contracts.CreateProfileServiceable;
-import dev.rvz.agenda.inteligente.database.services.contracts.GetAllProfilesServiceable;
-import dev.rvz.agenda.inteligente.database.services.contracts.GetByIdProfileServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.profiles.CreateProfileServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.profiles.GetAllProfilesServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.profiles.GetByIdProfileServiceable;
 
 @RestController
 @RequestMapping(path = "/profiles")
