@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import dev.rvz.agenda.inteligente.database.entities.Category;
-import dev.rvz.agenda.inteligente.database.exceptions.CategorByNameNotFoundException;
+import dev.rvz.agenda.inteligente.database.exceptions.categories.CategorByNameNotFoundException;
 import dev.rvz.agenda.inteligente.database.repositories.CategoryRepository;
-import dev.rvz.agenda.inteligente.database.services.contracts.FindCategoryByNameServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.categories.FindCategoryByNameServiceable;
 
 @Service
 public class FindCategoryByNameService implements FindCategoryByNameServiceable {

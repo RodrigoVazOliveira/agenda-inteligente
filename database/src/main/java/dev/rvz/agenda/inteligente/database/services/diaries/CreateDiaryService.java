@@ -1,5 +1,7 @@
 package dev.rvz.agenda.inteligente.database.services.diaries;
 
+import java.time.LocalDateTime;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -9,9 +11,9 @@ import dev.rvz.agenda.inteligente.database.entities.Category;
 import dev.rvz.agenda.inteligente.database.entities.Diary;
 import dev.rvz.agenda.inteligente.database.entities.Profile;
 import dev.rvz.agenda.inteligente.database.repositories.DiaryRepository;
-import dev.rvz.agenda.inteligente.database.services.contracts.CreateDiaryServiceable;
-import dev.rvz.agenda.inteligente.database.services.contracts.FindCategoryByNameServiceable;
-import dev.rvz.agenda.inteligente.database.services.contracts.FindProfileByEmailServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.categories.FindCategoryByNameServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.diaries.CreateDiaryServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.profiles.FindProfileByEmailServiceable;
 
 @Service
 public class CreateDiaryService implements CreateDiaryServiceable {
@@ -33,6 +35,7 @@ public class CreateDiaryService implements CreateDiaryServiceable {
 		LOGGER.info("execute - input diary: {}", diary);
 		setProfileByEmailInDiary(diary);
 		setCategoryByNameInDiary(diary);
+		diary.setDateTime(LocalDateTime.now());
 
 		return this.diaryRepository.save(diary);
 	}

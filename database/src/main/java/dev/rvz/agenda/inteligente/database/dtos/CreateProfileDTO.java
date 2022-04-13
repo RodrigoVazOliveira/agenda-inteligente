@@ -73,7 +73,13 @@ public class CreateProfileDTO {
 		List<Telephone> telephones = convertTelephonesDTOsToEntityTelephone();
 		Contact contact = new Contact(email, telephones);
 
-		return new Profile(this.firstName, this.lastName, this.birthdate, contact);
+		Profile profile = new Profile();
+		profile.setFirstName(firstName);
+		profile.setLastName(lastName);
+		profile.setBithdate(birthdate);
+		profile.setContact(contact);
+
+		return profile;
 	}
 
 	private List<Telephone> convertTelephonesDTOsToEntityTelephone() {

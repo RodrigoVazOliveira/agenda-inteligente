@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import dev.rvz.agenda.inteligente.database.entities.Profile;
-import dev.rvz.agenda.inteligente.database.exceptions.ProfileNotFoundException;
+import dev.rvz.agenda.inteligente.database.exceptions.profiles.ProfileNotFoundException;
 import dev.rvz.agenda.inteligente.database.repositories.ProfileRepository;
-import dev.rvz.agenda.inteligente.database.services.contracts.FindProfileByEmailServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.profiles.FindProfileByEmailServiceable;
 
 @Service
 public class FindProfileByEmailService implements FindProfileByEmailServiceable {

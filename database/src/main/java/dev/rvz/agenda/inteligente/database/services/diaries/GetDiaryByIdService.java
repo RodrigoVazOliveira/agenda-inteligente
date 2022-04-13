@@ -5,12 +5,11 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import dev.rvz.agenda.inteligente.database.entities.Diary;
-import dev.rvz.agenda.inteligente.database.exceptions.DiaryByIdNotFoundException;
+import dev.rvz.agenda.inteligente.database.exceptions.diaries.DiaryByIdNotFoundException;
 import dev.rvz.agenda.inteligente.database.repositories.DiaryRepository;
-import dev.rvz.agenda.inteligente.database.services.contracts.GetDiaryByIdServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.diaries.GetDiaryByIdServiceable;
 
 @Service
 public class GetDiaryByIdService implements GetDiaryByIdServiceable {
@@ -21,20 +20,15 @@ public class GetDiaryByIdService implements GetDiaryByIdServiceable {
 		this.diaryRepository = diaryRepository;
 	}
 
-	@Transactional
 	@Override
 	public Diary execute(Long id) {
 		LOGGER.info("execute input id: {}", id);
-		Diary diary = findById(id);
-		LOGGER.info("execute output diary: {}", diary);
-		return diary;
-	}
-
-	private Diary findById(Long id) throws DiaryByIdNotFoundException {
 		Optional<Diary> diaryOptional = this.diaryRepository.findById(id);
 		findDiaryByIdIsEmpty(id, diaryOptional);
+		Diary diary = diaryOptional.get();
+		LOGGER.info("execute output diary: {}", diary);
 
-		return diaryOptional.get();
+		return diary;
 	}
 
 	private void findDiaryByIdIsEmpty(Long id, Optional<Diary> diaryOptional) {

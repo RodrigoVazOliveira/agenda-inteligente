@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import dev.rvz.agenda.inteligente.database.entities.Profile;
 import dev.rvz.agenda.inteligente.database.repositories.ProfileRepository;
-import dev.rvz.agenda.inteligente.database.services.contracts.GetAllProfilesServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.profiles.GetAllProfilesServiceable;
 
 @Service
 public class GetAllProfilesService implements GetAllProfilesServiceable {

@@ -7,6 +7,7 @@ import dev.rvz.agenda.inteligente.database.entities.Contact;
 import dev.rvz.agenda.inteligente.database.entities.Diary;
 import dev.rvz.agenda.inteligente.database.entities.Email;
 import dev.rvz.agenda.inteligente.database.entities.Profile;
+import dev.rvz.agenda.inteligente.database.entities.TypePlaceEnum;
 import dev.rvz.agenda.inteligente.database.helpers.ConvertEntityToString;
 
 public class CreateDiaryDTO {
@@ -74,6 +75,12 @@ public class CreateDiaryDTO {
 		diary.setSubject(subject);
 		diary.setDescription(description);
 		diary.setComments(comments);
+
+		if (TypePlaceEnum.VIRTUAL.name().equals(this.place)) {
+			diary.setPlace(TypePlaceEnum.VIRTUAL);
+		} else {
+			diary.setPlace(TypePlaceEnum.PRESENTIAL);
+		}
 
 		return diary;
 	}
