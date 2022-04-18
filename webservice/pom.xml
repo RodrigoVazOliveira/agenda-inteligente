@@ -4,13 +4,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>dev.rvz.agenda.inteligente</groupId>
 	<artifactId>webservice</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<version>${revision}</version>
+	<packaging>pom</packaging>
 	<name>webservice</name>
 
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
+		<jackson.version>2.13.2.2</jackson.version>
+		<revision>0.0.1-SNAPSHOT</revision>
 	</properties>
 
 	<dependencies>
@@ -20,7 +22,11 @@
 			<version>20.0.1.Final</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.36</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -32,4 +38,8 @@
 			</plugin>
 		</plugins>
 	</build>
+	<modules>
+		<module>database-api</module>
+		<module>commons</module>
+	</modules>
 </project>
