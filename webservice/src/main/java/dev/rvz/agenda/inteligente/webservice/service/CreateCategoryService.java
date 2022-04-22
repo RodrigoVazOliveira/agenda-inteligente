@@ -10,6 +10,7 @@ import dev.rvz.agenda.inteligente.webservice.exceptions.CreateCategoryBadRequest
 import dev.rvz.agenda.inteligente.webservice.exceptions.CreateCategoryInternalServerErrorException;
 import dev.rvz.agenda.inteligente.webservice.rest.CategoryDatabase;
 import dev.rvz.agenda.inteligente.webservice.service.port.CreateCategoryServicePort;
+import feign.FeignException;
 import feign.FeignException.FeignClientException;
 
 @Service
@@ -36,7 +37,7 @@ public class CreateCategoryService implements CreateCategoryServicePort {
 			}
 
 			throw new CreateCategoryInternalServerErrorException(e.responseBody().toString());
-		} catch (FeignExceptionx e) {
+		} catch (FeignException e) {
 			throw new CreateCategoryInternalServerErrorException(e.responseBody().toString());
 		}
 	}
