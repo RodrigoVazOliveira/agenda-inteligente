@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import dev.rvz.agenda.inteligente.webservice.dtos.CreateProfileRequestDTO;
+import dev.rvz.agenda.inteligente.webservice.dtos.ProfileResponseDTO;
 
 @FeignClient(url = "${url.profiles}", name = "ProfileDatabase", value = "ProfileDatabase")
 public interface ProfileDatabase {

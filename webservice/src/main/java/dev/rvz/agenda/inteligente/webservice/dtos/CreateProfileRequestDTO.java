@@ -10,12 +10,12 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
+import dev.rvz.agenda.inteligente.webservice.helpers.ConvertObjectToJson;
 
 public class CreateProfileRequestDTO {
 
@@ -75,11 +75,6 @@ public class CreateProfileRequestDTO {
 
 	@Override
 	public String toString() {
-		ObjectMapper objectMapper = new ObjectMapper();
-		try {
-			return objectMapper.writeValueAsString(this);
-		} catch (JsonProcessingException exception) {
-			throw new RuntimeException(exception.getMessage());
-		}
+		return ConvertObjectToJson.run(this);
 	}
 }

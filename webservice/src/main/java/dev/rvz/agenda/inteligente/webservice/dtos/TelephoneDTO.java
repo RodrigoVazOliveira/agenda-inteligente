@@ -4,8 +4,8 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import dev.rvz.agenda.inteligente.webservice.helpers.ConvertObjectToJson;
 
 public class TelephoneDTO {
 
@@ -31,11 +31,6 @@ public class TelephoneDTO {
 
 	@Override
 	public String toString() {
-		ObjectMapper objectMapper = new ObjectMapper();
-		try {
-			return objectMapper.writeValueAsString(this);
-		} catch (JsonProcessingException exception) {
-			throw new RuntimeException(exception.getMessage());
-		}
+		return ConvertObjectToJson.run(this);
 	}
 }

@@ -5,8 +5,8 @@ import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import dev.rvz.agenda.inteligente.webservice.helpers.ConvertObjectToJson;
 
 public class CategoryRequestDTO {
 
@@ -25,11 +25,6 @@ public class CategoryRequestDTO {
 
 	@Override
 	public String toString() {
-		ObjectMapper objectMapper = new ObjectMapper();
-		try {
-			return objectMapper.writeValueAsString(this);
-		} catch (JsonProcessingException e) {
-			throw new RuntimeException(e.getMessage());
-		}
+		return ConvertObjectToJson.run(this);
 	}
 }
