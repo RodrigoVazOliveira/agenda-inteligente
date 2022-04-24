@@ -1,4 +1,4 @@
-package dev.rvz.agenda.inteligente.webservice.exceptions;
+package dev.rvz.agenda.inteligente.webservice.exceptions.categories;
 
 public class CreateCategoryInternalServerErrorException extends RuntimeException {
 	private Integer code = 500;

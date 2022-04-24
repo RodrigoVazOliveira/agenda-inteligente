@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import dev.rvz.agenda.inteligente.webservice.dtos.CategoryRequestDTO;
 import dev.rvz.agenda.inteligente.webservice.dtos.CategoryResponseDTO;
 
-@FeignClient(url = "${url.base.categories}")
+@FeignClient(url = "${url.base.categories}", name = "CategoryDatabase", value = "CategoryDatabase")
 public interface CategoryDatabase {
 
 	@PostMapping
