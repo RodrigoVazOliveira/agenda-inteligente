@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "e6c5c86e-2869-43f7-9a47-02b389713f84",
+		"name": "webservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"LAZER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/webservice/categories",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webservice",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/webservice/categories",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webservice",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obter todos profiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/webservice/profiles",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webservice",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Rodrigo\",\n    \"lastName\": \"Vaz De Oliveira\",\n    \"birthdate\": \"17/11/1991\",\n    \"email\": \"rodrigo.vaz.oliveira@gmail.com\",\n    \"telephones\": [\n        {\n            \"ddd\": 34,\n            \"number\": 998794\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/webservice/profiles",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webservice",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/webservice/profiles",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webservice",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all profile by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/webservice/profiles/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webservice",
+						"profiles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all diaries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/webservice/diaries",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webservice",
+						"diaries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create diary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"rodrigo.vaz@gmail.com\",\n    \"description\": \"saideira\",\n    \"subject\": \"Nao sei\",\n    \"category\": \"FESTa\",\n    \"comments\": \"sem comenmtarios\",\n    \"place\": \"VIRTUAL\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/webservice/diaries",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webservice",
+						"diaries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all diaries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/webservice/diaries",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webservice",
+						"diaries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get diary by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/webservice/diaries/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webservice",
+						"diaries",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get diarie by email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/webservice/diaries/profile/rodrigo.vaz@gmail.com+",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webservice",
+						"diaries",
+						"profile",
+						"rodrigo.vaz@gmail.com+"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all diaries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/database/diaries",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"database",
+						"diaries"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
