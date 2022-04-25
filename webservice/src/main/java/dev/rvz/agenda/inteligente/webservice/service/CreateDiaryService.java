@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 
 import dev.rvz.agenda.inteligente.webservice.dtos.CreateDiaryRequestDTO;
 import dev.rvz.agenda.inteligente.webservice.dtos.DiaryResponseDTO;
-import dev.rvz.agenda.inteligente.webservice.exceptions.diaries.CreateDiaryBadRequestException;
-import dev.rvz.agenda.inteligente.webservice.exceptions.diaries.CreateDiaryInternalServerErrorException;
+import dev.rvz.agenda.inteligente.webservice.exceptions.diaries.DiaryBadRequestException;
+import dev.rvz.agenda.inteligente.webservice.exceptions.diaries.DiaryInternalServerErrorException;
 import dev.rvz.agenda.inteligente.webservice.rest.DiaryDatabase;
 import dev.rvz.agenda.inteligente.webservice.service.port.CreateDiaryServicePort;
 import feign.FeignException;
@@ -31,7 +31,7 @@ public class CreateDiaryService implements CreateDiaryServicePort {
 			return null;
 		} catch (FeignException exception) {
 			LOGGER.error("run - status: {}, message : {}", exception.status(), exception.getMessage());
-			throw new CreateDiaryInternalServerErrorException(exception.getMessage());
+			throw new DiaryInternalServerErrorException(exception.getMessage());
 		}
 
 	}
@@ -39,10 +39,10 @@ public class CreateDiaryService implements CreateDiaryServicePort {
 	private void requestError(FeignClientException exception) {
 		LOGGER.error("requestError - status: {}, message : {}", exception.status(), exception.getMessage());
 		if (exception.status() == 400) {
-			throw new CreateDiaryBadRequestException(exception.getMessage());
+			throw new DiaryBadRequestException(exception.getMessage());
 		}
 
-		throw new CreateDiaryInternalServerErrorException(exception.getMessage());
+		throw new DiaryInternalServerErrorException(exception.getMessage());
 	}
 
 	private DiaryResponseDTO request(CreateDiaryRequestDTO createDiaryRequestDTO) {

@@ -1,10 +1,10 @@
 package dev.rvz.agenda.inteligente.webservice.exceptions.diaries;
 
-public class CreateDiaryInternalServerErrorException extends RuntimeException {
+public class DiaryInternalServerErrorException extends RuntimeException {
 
 	private final Integer code = 500;
 
-	public CreateDiaryInternalServerErrorException(String message) {
+	public DiaryInternalServerErrorException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}

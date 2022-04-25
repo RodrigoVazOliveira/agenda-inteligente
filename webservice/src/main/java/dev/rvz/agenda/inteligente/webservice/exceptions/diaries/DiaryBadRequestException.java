@@ -1,10 +1,10 @@
 package dev.rvz.agenda.inteligente.webservice.exceptions.diaries;
 
-public class CreateDiaryBadRequestException extends RuntimeException {
+public class DiaryBadRequestException extends RuntimeException {
 
 	private final Integer code = 400;
 
-	public CreateDiaryBadRequestException(String message) {
+	public DiaryBadRequestException(String message) {
 		super(message);
 	}
 
