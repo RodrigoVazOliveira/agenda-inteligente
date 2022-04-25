@@ -4,28 +4,27 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import dev.rvz.agenda.inteligente.webservice.dtos.CreateDiaryRequestDTO;
 import dev.rvz.agenda.inteligente.webservice.dtos.DiaryResponseDTO;
 import dev.rvz.agenda.inteligente.webservice.exceptions.diaries.CreateDiaryBadRequestException;
 import dev.rvz.agenda.inteligente.webservice.exceptions.diaries.CreateDiaryInternalServerErrorException;
 import dev.rvz.agenda.inteligente.webservice.rest.DiaryDatabase;
-import dev.rvz.agenda.inteligente.webservice.service.port.CreateDiaryServicePort;
+import dev.rvz.agenda.inteligente.webservice.service.port.GetDiaryByIdServicePort;
 import feign.FeignException;
 import feign.FeignException.FeignClientException;
 
 @Service
-public class CreateDiaryService implements CreateDiaryServicePort {
-	private final static Logger LOGGER = LoggerFactory.getLogger(CreateDiaryService.class);
+public class GetDiaryByIdService implements GetDiaryByIdServicePort {
+	private final static Logger LOGGER = LoggerFactory.getLogger(GetDiaryByIdService.class);
 	private final DiaryDatabase diaryDatabase;
 
-	public CreateDiaryService(DiaryDatabase diaryDatabase) {
+	public GetDiaryByIdService(DiaryDatabase diaryDatabase) {
 		this.diaryDatabase = diaryDatabase;
 	}
 
 	@Override
-	public DiaryResponseDTO run(CreateDiaryRequestDTO createDiaryRequestDTO) {
+	public DiaryResponseDTO run(Long id) {
 		try {
-			return request(createDiaryRequestDTO);
+			return request(id);
 		} catch (FeignClientException exception) {
 			requestError(exception);
 			return null;
@@ -45,10 +44,10 @@ public class CreateDiaryService implements CreateDiaryServicePort {
 		throw new CreateDiaryInternalServerErrorException(exception.getMessage());
 	}
 
-	private DiaryResponseDTO request(CreateDiaryRequestDTO createDiaryRequestDTO) {
-		LOGGER.info("request - createDiaryRequestDTO : {}", createDiaryRequestDTO);
-		DiaryResponseDTO diaryResponseDTO = this.diaryDatabase.create(createDiaryRequestDTO);
-		LOGGER.info("request - diaryResponseDTO : {}", diaryResponseDTO);
+	private DiaryResponseDTO request(Long id) {
+		LOGGER.info("run - id : {}", id);
+		DiaryResponseDTO diaryResponseDTO = this.diaryDatabase.getById(id);
+		LOGGER.info("run - diaryResponseDTO : {}", diaryResponseDTO);
 
 		return diaryResponseDTO;
 	}
