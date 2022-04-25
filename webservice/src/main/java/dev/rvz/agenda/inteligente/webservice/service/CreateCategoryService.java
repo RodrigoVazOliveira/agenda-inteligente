@@ -6,10 +6,11 @@ import org.springframework.stereotype.Service;
 
 import dev.rvz.agenda.inteligente.webservice.dtos.CategoryRequestDTO;
 import dev.rvz.agenda.inteligente.webservice.dtos.CategoryResponseDTO;
-import dev.rvz.agenda.inteligente.webservice.exceptions.CreateCategoryBadRequestException;
-import dev.rvz.agenda.inteligente.webservice.exceptions.CreateCategoryInternalServerErrorException;
+import dev.rvz.agenda.inteligente.webservice.exceptions.categories.CreateCategoryBadRequestException;
+import dev.rvz.agenda.inteligente.webservice.exceptions.categories.CreateCategoryInternalServerErrorException;
 import dev.rvz.agenda.inteligente.webservice.rest.CategoryDatabase;
 import dev.rvz.agenda.inteligente.webservice.service.port.CreateCategoryServicePort;
+import feign.FeignException;
 import feign.FeignException.FeignClientException;
 
 @Service
@@ -32,12 +33,12 @@ public class CreateCategoryService implements CreateCategoryServicePort {
 		} catch (FeignClientException e) {
 			LOGGER.error("run - status: {}, responseBody: {}", e.status(), e.responseBody());
 			if (e.status() == 400) {
-				throw new CreateCategoryBadRequestException(e.responseBody().toString());
+				throw new CreateCategoryBadRequestException(e.getMessage());
 			}
 
 			throw new CreateCategoryInternalServerErrorException(e.responseBody().toString());
-		} catch (FeignExceptionx e) {
-			throw new CreateCategoryInternalServerErrorException(e.responseBody().toString());
+		} catch (FeignException e) {
+			throw new CreateCategoryInternalServerErrorException(e.getMessage());
 		}
 	}
 

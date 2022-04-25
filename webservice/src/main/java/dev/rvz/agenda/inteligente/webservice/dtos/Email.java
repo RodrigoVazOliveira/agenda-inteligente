@@ -5,23 +5,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import dev.rvz.agenda.inteligente.webservice.helpers.ConvertObjectToJson;
 
-public class CategoryResponseDTO {
+public class Email {
 
-	private final Long id;
-	private final String name;
+	private final String address;
 
 	@JsonCreator
-	public CategoryResponseDTO(@JsonProperty("id") Long id, @JsonProperty("name") String name) {
-		this.id = id;
-		this.name = name;
+	public Email(@JsonProperty("address") String address) {
+		this.address = address;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
+	public String getAddress() {
+		return address;
 	}
 
 	@Override

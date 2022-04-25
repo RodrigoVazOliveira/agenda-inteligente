@@ -1,4 +1,4 @@
-package dev.rvz.agenda.inteligente.webservice.exceptions;
+package dev.rvz.agenda.inteligente.webservice.exceptions.categories;
 
 public class CreateCategoryBadRequestException extends RuntimeException {
 

@@ -5,23 +5,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import dev.rvz.agenda.inteligente.webservice.helpers.ConvertObjectToJson;
 
-public class CategoryResponseDTO {
+public class Telephone {
 
-	private final Long id;
-	private final String name;
+	private final Integer ddd;
+	private final Integer number;
 
 	@JsonCreator
-	public CategoryResponseDTO(@JsonProperty("id") Long id, @JsonProperty("name") String name) {
-		this.id = id;
-		this.name = name;
+	public Telephone(@JsonProperty("ddd") Integer ddd, @JsonProperty("number") Integer number) {
+		this.ddd = ddd;
+		this.number = number;
 	}
 
-	public Long getId() {
-		return id;
+	public Integer getDdd() {
+		return ddd;
 	}
 
-	public String getName() {
-		return name;
+	public Integer getNumber() {
+		return number;
 	}
 
 	@Override
