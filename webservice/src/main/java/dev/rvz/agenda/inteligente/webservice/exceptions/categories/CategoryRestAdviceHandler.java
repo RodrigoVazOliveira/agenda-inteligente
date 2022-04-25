@@ -15,4 +15,10 @@ class CategoryRestAdviceHandler {
 	ResponseNotArgsValidation createCategoryBadRequestException(CreateCategoryBadRequestException e) {
 		return new ResponseNotArgsValidation(e.getCode(), e.getMessage());
 	}
+
+	@ExceptionHandler(GetAllCategoriesErrorException.class)
+	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+	ResponseNotArgsValidation getAllCategoriesErrorException(GetAllCategoriesErrorException e) {
+		return new ResponseNotArgsValidation(e.getCode(), e.getMessage());
+	}
 }
