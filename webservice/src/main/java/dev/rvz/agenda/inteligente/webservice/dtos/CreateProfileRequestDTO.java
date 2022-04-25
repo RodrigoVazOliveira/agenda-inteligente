@@ -5,15 +5,13 @@ import java.util.List;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 import dev.rvz.agenda.inteligente.webservice.helpers.ConvertObjectToJson;
 
@@ -27,10 +25,8 @@ public class CreateProfileRequestDTO {
 	@Size(min = 3, max = 70, message = "deve possuir no minio 3 e no maximo 70 caracteres")
 	private final String lastName;
 
-	@NotBlank(message = "o birthdate deve ser preenchido")
+	@NotNull(message = "o birthdate deve ser preenchido")
 	@JsonFormat(pattern = "dd/MM/yyyy", shape = Shape.STRING)
-	@JsonSerialize(using = LocalDateSerializer.class)
-	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private final LocalDate birthdate;
 
 	@NotBlank(message = "o email deve ser preenchido")
@@ -40,12 +36,13 @@ public class CreateProfileRequestDTO {
 	@JsonProperty("telephones")
 	private final List<TelephoneDTO> telephoneDTOs;
 
+	@JsonCreator
 	public CreateProfileRequestDTO(
 			@NotBlank(message = "o firstname deve ser preenchido") @Size(min = 3, max = 70, message = "deve possuir no minio 3 e no maximo 70 caracteres") String firstName,
 			@NotBlank(message = "o lastName deve ser preenchido") @Size(min = 3, max = 70, message = "deve possuir no minio 3 e no maximo 70 caracteres") String lastName,
-			@NotBlank(message = "o birthdate deve ser preenchido") LocalDate birthdate,
+			@NotNull(message = "o birthdate deve ser preenchido") LocalDate birthdate,
 			@NotBlank(message = "o email deve ser preenchido") @Email(message = "o email informado nao e valido") String email,
-			List<TelephoneDTO> telephoneDTOs) {
+			@JsonProperty("telephones") List<TelephoneDTO> telephoneDTOs) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.birthdate = birthdate;

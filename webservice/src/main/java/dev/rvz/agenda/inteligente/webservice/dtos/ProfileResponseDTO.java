@@ -3,13 +3,7 @@ package dev.rvz.agenda.inteligente.webservice.dtos;
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 import dev.rvz.agenda.inteligente.webservice.helpers.ConvertObjectToJson;
 
@@ -19,9 +13,6 @@ public class ProfileResponseDTO {
 	private final String firstName;
 	private final String lastName;
 
-	@JsonSerialize(using = LocalDateSerializer.class)
-	@JsonDeserialize(using = LocalDateDeserializer.class)
-	@JsonFormat(pattern = "dd/MM/yyyy", shape = Shape.STRING)
 	private final LocalDate bithdate;
 	private final ContactResponseDTO contact;
 

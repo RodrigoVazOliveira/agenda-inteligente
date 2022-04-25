@@ -3,7 +3,6 @@ package dev.rvz.agenda.inteligente.database.controllers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,7 +46,6 @@ class DiaryRestController implements DiaryRestControllerable {
 		return this.createDiaryService.execute(diary);
 	}
 
-	@Transactional
 	@GetMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.OK)
 	@Override
@@ -64,6 +62,7 @@ class DiaryRestController implements DiaryRestControllerable {
 	}
 
 	@GetMapping(path = "/profile/{email}")
+	@ResponseStatus(code = HttpStatus.OK)
 	@Override
 	public Iterable<Diary> getDiaryByEmailProfile(@PathVariable String email) {
 		LOGGER.info("getDiaryByEmailProfile input email: {}", email);
