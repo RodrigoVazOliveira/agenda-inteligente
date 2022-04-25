@@ -37,7 +37,7 @@ public class GetAllDiaryService implements GetAllDiaryServicePort {
 	private Iterable<DiaryResponseDTO> request() {
 		LOGGER.info("request - get all diaries");
 		Iterable<DiaryResponseDTO> diaryResponseDTOs = this.diaryDatabase.getAll();
-		LOGGER.info("request - diaryResponseDTOs : {}", diaryResponseDTOs);
+		LOGGER.info("request - diaryResponse	DTOs : {}", diaryResponseDTOs);
 
 		return diaryResponseDTOs;
 	}
