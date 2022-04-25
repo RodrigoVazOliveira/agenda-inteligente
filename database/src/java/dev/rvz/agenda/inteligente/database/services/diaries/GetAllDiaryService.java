@@ -1,5 +1,7 @@
 package dev.rvz.agenda.inteligente.database.services.diaries;
 
+import javax.transaction.Transactional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ public class GetAllDiaryService implements GetAllDiaryServiceable {
 		this.diaryRepository = diaryRepository;
 	}
 
+	@Transactional
 	@Override
 	public Iterable<Diary> execute() {
 		Iterable<Diary> diaries = this.diaryRepository.findAll();

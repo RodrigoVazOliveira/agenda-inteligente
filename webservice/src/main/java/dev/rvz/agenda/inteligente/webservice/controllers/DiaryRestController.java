@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,8 +58,10 @@ class DiaryRestController implements DiaryRestControllerPort {
 		return this.getAllDiaryService.run();
 	}
 
+	@GetMapping("/{id}")
+	@ResponseStatus(code = HttpStatus.OK)
 	@Override
-	public DiaryResponseDTO getById(Long id) {
+	public DiaryResponseDTO getById(@PathVariable Long id) {
 		LOGGER.info("getById - id : {}", id);
 		DiaryResponseDTO diaryResponseDTO = this.getDiaryByIdService.run(id);
 		LOGGER.info("getById - diaryResponseDTO : {}", diaryResponseDTO);
@@ -66,8 +69,10 @@ class DiaryRestController implements DiaryRestControllerPort {
 		return diaryResponseDTO;
 	}
 
+	@GetMapping("/profile/{email}")
+	@ResponseStatus(code = HttpStatus.OK)
 	@Override
-	public Iterable<DiaryResponseDTO> getDiaryByEmailProfile(String email) {
+	public Iterable<DiaryResponseDTO> getDiaryByEmailProfile(@PathVariable String email) {
 		LOGGER.info("getDiaryByEmailProfile - email : {}", email);
 		return this.getDiaryByEmailProfileService.run(email);
 	}

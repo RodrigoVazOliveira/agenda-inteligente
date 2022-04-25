@@ -21,7 +21,7 @@ public interface DiaryDatabase {
 	@GetMapping
 	Iterable<DiaryResponseDTO> getAll();
 
-	@GetMapping("/profiles/{email}")
+	@GetMapping("/profile/{email}")
 	Iterable<DiaryResponseDTO> getDiaryByEmailProfile(@PathVariable String email);
 
 }

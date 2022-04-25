@@ -17,7 +17,7 @@ class DiaryRestControllerAdviceHandler {
 	}
 
 	@ExceptionHandler(value = DiaryInternalServerErrorException.class)
-	@ResponseStatus(code = HttpStatus.BAD_REQUEST)
+	@ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR)
 	ResponseNotArgsValidation diaryInternalServerErrorException(DiaryInternalServerErrorException exception) {
 		return new ResponseNotArgsValidation(exception.getCode(), exception.getMessage());
 	}

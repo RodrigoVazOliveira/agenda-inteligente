@@ -10,11 +10,23 @@ import dev.rvz.agenda.inteligente.webservice.helpers.ConvertObjectToJson;
 
 public class CreateDiaryRequestDTO {
 
+	@NotBlank(message = "email nao foi preenchido")
+	@Email(message = "email nao e valido")
 	private final String email;
+
+	@NotBlank(message = "subject nao foi preenchido")
 	private final String subject;
+
+	@NotBlank(message = "description nao foi preenchido")
 	private final String description;
+
+	@NotBlank(message = "comments nao foi preenchido")
 	private final String comments;
+
+	@NotBlank(message = "place nao foi preenchido")
 	private final String place;
+
+	@NotBlank(message = "category nao foi preenchido")
 	private final String category;
 
 	@JsonCreator
