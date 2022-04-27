@@ -1,14 +1,13 @@
 package dev.rvz.agenda.inteligente.database.services.diaries;
 
-import javax.transaction.Transactional;
-
+import dev.rvz.agenda.inteligente.database.entities.Diary;
+import dev.rvz.agenda.inteligente.database.repositories.DiaryRepository;
+import dev.rvz.agenda.inteligente.database.services.contracts.diaries.GetAllDiaryServiceable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import dev.rvz.agenda.inteligente.database.entities.Diary;
-import dev.rvz.agenda.inteligente.database.repositories.DiaryRepository;
-import dev.rvz.agenda.inteligente.database.services.contracts.diaries.GetAllDiaryServiceable;
+import javax.transaction.Transactional;
 
 @Service
 public class GetAllDiaryService implements GetAllDiaryServiceable {

@@ -1,15 +1,14 @@
 package dev.rvz.agenda.inteligente.database.services.categories;
 
-import java.util.Optional;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-
 import dev.rvz.agenda.inteligente.database.entities.Category;
 import dev.rvz.agenda.inteligente.database.exceptions.categories.CategorByNameNotFoundException;
 import dev.rvz.agenda.inteligente.database.repositories.CategoryRepository;
 import dev.rvz.agenda.inteligente.database.services.contracts.categories.FindCategoryByNameServiceable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class FindCategoryByNameService implements FindCategoryByNameServiceable {

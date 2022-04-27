@@ -1,10 +1,9 @@
 package dev.rvz.agenda.inteligente.database.controllers.contract;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-
 import dev.rvz.agenda.inteligente.database.dtos.CreateProfileDTO;
 import dev.rvz.agenda.inteligente.database.entities.Profile;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 public interface ProfileRestControllerable {
 

@@ -1,16 +1,9 @@
 package dev.rvz.agenda.inteligente.database.entities;
 
-import java.time.LocalDate;
-
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 import dev.rvz.agenda.inteligente.database.helpers.ConvertEntityToString;
+
+import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "profiles")

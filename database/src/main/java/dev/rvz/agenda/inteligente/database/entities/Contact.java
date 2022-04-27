@@ -1,13 +1,12 @@
 package dev.rvz.agenda.inteligente.database.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+import dev.rvz.agenda.inteligente.database.helpers.ConvertEntityToString;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
-
-import dev.rvz.agenda.inteligente.database.helpers.ConvertEntityToString;
+import java.util.ArrayList;
+import java.util.List;
 
 @Embeddable
 public class Contact {

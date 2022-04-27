@@ -1,17 +1,15 @@
 package dev.rvz.agenda.inteligente.database.services.diaries;
 
-import java.util.Optional;
-
-import javax.transaction.Transactional;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-
 import dev.rvz.agenda.inteligente.database.entities.Diary;
 import dev.rvz.agenda.inteligente.database.exceptions.diaries.DiaryByIdNotFoundException;
 import dev.rvz.agenda.inteligente.database.repositories.DiaryRepository;
 import dev.rvz.agenda.inteligente.database.services.contracts.diaries.GetDiaryByIdServiceable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Service
 public class GetDiaryByIdService implements GetDiaryByIdServiceable {

@@ -1,9 +1,8 @@
 package dev.rvz.agenda.inteligente.database.repositories;
 
+import dev.rvz.agenda.inteligente.database.entities.Diary;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-
-import dev.rvz.agenda.inteligente.database.entities.Diary;
 
 public interface DiaryRepository extends CrudRepository<Diary, Long> {
 

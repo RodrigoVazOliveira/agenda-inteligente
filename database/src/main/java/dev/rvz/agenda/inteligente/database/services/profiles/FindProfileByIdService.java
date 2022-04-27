@@ -1,16 +1,15 @@
 package dev.rvz.agenda.inteligente.database.services.profiles;
 
-import java.util.Optional;
-
+import dev.rvz.agenda.inteligente.database.entities.Profile;
+import dev.rvz.agenda.inteligente.database.exceptions.profiles.ProfileNotFoundException;
+import dev.rvz.agenda.inteligente.database.repositories.ProfileRepository;
+import dev.rvz.agenda.inteligente.database.services.contracts.profiles.FindProfileByIdServiceable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import dev.rvz.agenda.inteligente.database.entities.Profile;
-import dev.rvz.agenda.inteligente.database.exceptions.profiles.ProfileNotFoundException;
-import dev.rvz.agenda.inteligente.database.repositories.ProfileRepository;
-import dev.rvz.agenda.inteligente.database.services.contracts.profiles.FindProfileByIdServiceable;
+import java.util.Optional;
 
 @Service
 public class FindProfileByIdService implements FindProfileByIdServiceable {

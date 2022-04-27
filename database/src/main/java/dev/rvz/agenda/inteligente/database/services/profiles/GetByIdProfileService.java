@@ -1,13 +1,12 @@
 package dev.rvz.agenda.inteligente.database.services.profiles;
 
+import dev.rvz.agenda.inteligente.database.entities.Profile;
+import dev.rvz.agenda.inteligente.database.services.contracts.profiles.FindProfileByIdServiceable;
+import dev.rvz.agenda.inteligente.database.services.contracts.profiles.GetByIdProfileServiceable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import dev.rvz.agenda.inteligente.database.entities.Profile;
-import dev.rvz.agenda.inteligente.database.services.contracts.profiles.FindProfileByIdServiceable;
-import dev.rvz.agenda.inteligente.database.services.contracts.profiles.GetByIdProfileServiceable;
 
 @Service
 public class GetByIdProfileService implements GetByIdProfileServiceable {
