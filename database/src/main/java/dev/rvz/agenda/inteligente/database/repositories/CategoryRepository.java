@@ -1,10 +1,9 @@
 package dev.rvz.agenda.inteligente.database.repositories;
 
-import java.util.Optional;
-
+import dev.rvz.agenda.inteligente.database.entities.Category;
 import org.springframework.data.repository.CrudRepository;
 
-import dev.rvz.agenda.inteligente.database.entities.Category;
+import java.util.Optional;
 
 public interface CategoryRepository extends CrudRepository<Category, Long> {
 

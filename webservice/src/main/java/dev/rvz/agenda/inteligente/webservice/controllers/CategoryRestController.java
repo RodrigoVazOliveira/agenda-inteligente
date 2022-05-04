@@ -1,22 +1,16 @@
 package dev.rvz.agenda.inteligente.webservice.controllers;
 
-import javax.validation.Valid;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
-
 import dev.rvz.agenda.inteligente.webservice.controllers.port.CategoryRestControllerPort;
 import dev.rvz.agenda.inteligente.webservice.dtos.CategoryRequestDTO;
 import dev.rvz.agenda.inteligente.webservice.dtos.CategoryResponseDTO;
 import dev.rvz.agenda.inteligente.webservice.service.port.CreateCategoryServicePort;
 import dev.rvz.agenda.inteligente.webservice.service.port.GetAllCategoriesServicePort;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/categories")
@@ -49,5 +43,6 @@ class CategoryRestController implements CategoryRestControllerPort {
 		LOGGER.info("getall - searching categories");
 		return this.getAllCategoriesService.run();
 	}
+
 
 }

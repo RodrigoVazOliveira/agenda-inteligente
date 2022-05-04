@@ -1,14 +1,13 @@
 package dev.rvz.agenda.inteligente.database.services.categories;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-
 import dev.rvz.agenda.inteligente.database.entities.Category;
 import dev.rvz.agenda.inteligente.database.exceptions.categories.CategoryAlreadyExistsWithNameException;
 import dev.rvz.agenda.inteligente.database.repositories.CategoryRepository;
 import dev.rvz.agenda.inteligente.database.services.contracts.categories.CreateCategoryServiceable;
 import dev.rvz.agenda.inteligente.database.services.contracts.categories.ExistsCategoryByNameServiceable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 @Service
 public class CreateCategoryService implements CreateCategoryServiceable {

@@ -1,7 +1,6 @@
 package dev.rvz.agenda.inteligente.database.dtos;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-
 import dev.rvz.agenda.inteligente.database.entities.Category;
 import dev.rvz.agenda.inteligente.database.helpers.ConvertEntityToString;
 

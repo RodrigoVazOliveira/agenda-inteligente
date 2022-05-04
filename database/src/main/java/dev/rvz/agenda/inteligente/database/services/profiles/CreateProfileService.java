@@ -1,14 +1,13 @@
 package dev.rvz.agenda.inteligente.database.services.profiles;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-
 import dev.rvz.agenda.inteligente.database.entities.Profile;
 import dev.rvz.agenda.inteligente.database.exceptions.profiles.ProfileWithEmailAlreadyException;
 import dev.rvz.agenda.inteligente.database.repositories.ProfileRepository;
 import dev.rvz.agenda.inteligente.database.services.contracts.profiles.CreateProfileServiceable;
 import dev.rvz.agenda.inteligente.database.services.contracts.profiles.ExistsProfileWithEmailServiceable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 @Service
 public class CreateProfileService implements CreateProfileServiceable {

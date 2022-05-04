@@ -1,10 +1,9 @@
 package dev.rvz.agenda.inteligente.database.repositories;
 
-import java.util.Optional;
-
+import dev.rvz.agenda.inteligente.database.entities.Profile;
 import org.springframework.data.repository.CrudRepository;
 
-import dev.rvz.agenda.inteligente.database.entities.Profile;
+import java.util.Optional;
 
 public interface ProfileRepository extends CrudRepository<Profile, Long> {
 

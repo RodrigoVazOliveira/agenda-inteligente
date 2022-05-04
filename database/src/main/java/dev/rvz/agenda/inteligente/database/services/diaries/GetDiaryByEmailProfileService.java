@@ -1,13 +1,12 @@
 package dev.rvz.agenda.inteligente.database.services.diaries;
 
+import dev.rvz.agenda.inteligente.database.entities.Diary;
+import dev.rvz.agenda.inteligente.database.repositories.DiaryRepository;
+import dev.rvz.agenda.inteligente.database.services.contracts.diaries.GetDiaryByEmailProfileServiceable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import dev.rvz.agenda.inteligente.database.entities.Diary;
-import dev.rvz.agenda.inteligente.database.repositories.DiaryRepository;
-import dev.rvz.agenda.inteligente.database.services.contracts.diaries.GetDiaryByEmailProfileServiceable;
 
 @Service
 public class GetDiaryByEmailProfileService implements GetDiaryByEmailProfileServiceable {

@@ -1,9 +1,5 @@
 package dev.rvz.agenda.inteligente.database.dtos;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
@@ -12,12 +8,15 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-
 import dev.rvz.agenda.inteligente.database.entities.Contact;
 import dev.rvz.agenda.inteligente.database.entities.Email;
 import dev.rvz.agenda.inteligente.database.entities.Profile;
 import dev.rvz.agenda.inteligente.database.entities.Telephone;
 import dev.rvz.agenda.inteligente.database.helpers.ConvertEntityToString;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CreateProfileDTO {
 
